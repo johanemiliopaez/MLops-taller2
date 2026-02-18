@@ -70,7 +70,7 @@ Incluye librerias requeridas por:
 - `Setup/API/main.py`
 - `Setup/Model/train.py`
 
-## Comandos recomendados
+## Comandos para la ejecucion
 
 ### Levantar todo (mejor comando)
 ```bash
