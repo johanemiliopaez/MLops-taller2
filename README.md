@@ -30,7 +30,7 @@ contenedores/
 ## Servicios
 
 ### FastAPI (`fastapi-model`)
-- Puerto: `8000`
+- Puerto: `8989`
 - App: `Setup/API/main.py`
 - Ejecuta con hot-reload (`uvicorn --reload`) para reflejar cambios en `main.py` sin rebuild.
 
@@ -42,7 +42,14 @@ contenedores/
 
 ## Volumen compartido `commons`
 
-Los dos contenedores montan `commons` en `/workspace/commons` y, ademas, se montan estas carpetas locales:
+Los dos contenedores montan `commons` en `/workspace/commons`.
+
+En este proyecto, **`Setup/` contiene exactamente los directorios que van al volumen `commons`**:
+- `Setup/API`
+- `Setup/Model`
+- `Setup/Dataset`
+
+Estos directorios se montan asi:
 
 - `./Setup/API` -> `/workspace/commons/API`
 - `./Setup/Model` -> `/workspace/commons/Model`
@@ -92,8 +99,8 @@ docker compose down
 
 ## URLs
 
-- FastAPI: `http://localhost:8000`
-- FastAPI docs: `http://localhost:8000/docs`
+- FastAPI: `http://localhost:8989`
+- FastAPI docs: `http://localhost:8989/docs`
 - JupyterLab: `http://localhost:8888`
 
 ## Flujo de trabajo (JupyterLab -> FastAPI)
