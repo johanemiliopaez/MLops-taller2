@@ -17,10 +17,14 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # Ruta al dataset (desde la raíz del proyecto)
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATASET_PATH = os.path.join(PROJECT_ROOT, "Dataset", "penguins.csv")
-MODEL_DIR = os.path.dirname(os.path.abspath(__file__))
+#PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#DATASET_PATH = os.path.join(PROJECT_ROOT, "Dataset", "penguins.csv")
+#MODEL_DIR = os.path.dirname(os.path.abspath(__file__))
 
+PROJECT_ROOT = (os.path.dirname(os.getcwd()))
+#print (PROJECT_ROOT)
+DATASET_PATH = os.path.join(PROJECT_ROOT, "Dataset", "penguins.csv")
+MODEL_DIR = PROJECT_ROOT
 
 # ============== 1. PREPARACIÓN DE DATOS ==============
 

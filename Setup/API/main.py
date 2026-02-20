@@ -12,9 +12,10 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 # Rutas a los modelos (por defecto en el volumen compartido)
-API_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(API_DIR)
-MODEL_DIR = os.environ.get("MODEL_DIR", "/workspace/commons/Model")
+#API_DIR = os.path.dirname(os.path.abspath(__file__))
+#PROJECT_ROOT = os.path.dirname(API_DIR)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_DIR = os.path.join(BASE_DIR, "workspace", "commons", "Model")
 RF_PATH = os.path.join(MODEL_DIR, "RF.pkl")
 LR_PATH = os.path.join(MODEL_DIR, "LR.pkl")
 LOG_API_DIR = os.environ.get("LOG_API_DIR", "/log-api")

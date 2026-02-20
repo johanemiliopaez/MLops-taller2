@@ -73,11 +73,13 @@ Incluye librerias requeridas por:
 ## Comandos para la ejecucion
 
 ### Levantar todo (mejor comando)
+![Mi imagen](images/Comando-compilacion.png)
 ```bash
 docker compose up -d --build
 ```
-
+![Mi imagen](images/Tras-la-compilacion.png)
 ### Ver estado
+![Mi imagen](images/Ver-los-2-contenedores.png)
 ```bash
 docker compose ps
 ```
@@ -106,6 +108,13 @@ docker compose down
 ## Flujo de trabajo (JupyterLab -> FastAPI)
 
 1. Entrena o actualiza modelos en JupyterLab y guarda `.pkl` en `Setup/Model/`.
+![Antes de entrenar](images/antes-de-entrenar.png)
+![Notebook despues de correr](images/JUPITER-CORRER-CUADERNO-PRUEBA.png)
+![Despues de entrenar](images/despues-de-entrenar.png)
+![Verificar Volumen actualizado en el contenedor fastapi](images/verificar-volumen-fastapi.png)
+![Verificar Volumen actualizado en el contenedor fastapi lleno](images/Prueba-de-volumen-fast-api.png)
+![Prueba del API en modelo RF random fores](images/RF-PRUEBA-API.png)
+![Prueba del API en modelo LR Regresion logistica](images/LR-PRUEBA.png)
 2. Si agregas un modelo nuevo (ej. `NN.pkl`), actualiza `Setup/API/main.py` con su ruta/endpoint.
 3. FastAPI recarga automaticamente al guardar `main.py` por `--reload`.
 
